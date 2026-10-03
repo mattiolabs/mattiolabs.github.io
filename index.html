@@ -1,7 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andrea Mattiol</title>
+  <meta name="description" content="Pagina profilo di Andrea Mattiol">
+  <style>
+    /* ============================================================
+       Colori: modifica qui per cambiare il tema della pagina
+       ============================================================ */
+    :root {
+      --bg: #f6f7f9;
+      --card: #ffffff;
+      --text: #1f2328;
+      --muted: #59636e;
+      --accent: #2563eb;
+      --border: #e2e5e9;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --card: #161b22;
+        --text: #e6edf3;
+        --muted: #9198a1;
+        --accent: #58a6ff;
+        --border: #30363d;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 16px 64px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .avatar {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      border: 3px solid var(--border);
+      object-fit: cover;
+    }
+    h1 { margin: 0; font-size: 2rem; }
+    .role { margin: 4px 0 12px; color: var(--muted); font-size: 1.1rem; }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a {
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .links a:hover { border-color: var(--accent); color: var(--accent); }
+
+    section { margin-bottom: 40px; }
+    h2 {
+      font-size: 1.15rem;
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+    .skills li {
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+    .project {
+      display: block;
+      padding: 18px;
+      border-radius: 10px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+    }
+    .project:hover { border-color: var(--accent); }
+    .project h3 { margin: 0 0 6px; font-size: 1rem; color: var(--accent); }
+    .project p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <main>
+    <!-- ======================================================
+         INTESTAZIONE: nome, ruolo e link
+         L'immagine viene presa automaticamente dal tuo profilo GitHub.
+         ====================================================== -->
+    <header>
+      <img class="avatar" src="https://github.com/andreamatt81.png" alt="Foto di Andrea Mattiol">
+      <div>
+        <h1>Andrea Mattiol</h1>
+        <p class="role">Il tuo ruolo / professione</p>
+        <nav class="links">
+          <a href="https://github.com/andreamatt81">GitHub</a>
+          <a href="https://www.linkedin.com/">LinkedIn</a>
+          <a href="mailto:tua-email@esempio.com">Email</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ======================================================
+         CHI SONO: scrivi qualche riga su di te
+         ====================================================== -->
+    <section>
+      <h2>Chi sono</h2>
+      <p>
+        Ciao! Sono Andrea. Qui puoi scrivere una breve presentazione:
+        di cosa ti occupi, cosa ti appassiona e su cosa stai lavorando in questo periodo.
+      </p>
+    </section>
+
+    <!-- ======================================================
+         COMPETENZE: aggiungi o togli voci <li>
+         ====================================================== -->
+    <section>
+      <h2>Competenze</h2>
+      <ul class="skills">
+        <li>Competenza 1</li>
+        <li>Competenza 2</li>
+        <li>Competenza 3</li>
+        <li>Competenza 4</li>
+      </ul>
+    </section>
+
+    <!-- ======================================================
+         PROGETTI: copia un blocco <a class="project"> per aggiungerne altri
+         ====================================================== -->
+    <section>
+      <h2>Progetti</h2>
+      <div class="projects">
+        <a class="project" href="https://github.com/andreamatt81">
+          <h3>Nome progetto</h3>
+          <p>Breve descrizione del progetto.</p>
+        </a>
+        <a class="project" href="https://github.com/andreamatt81">
+          <h3>Altro progetto</h3>
+          <p>Breve descrizione del progetto.</p>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Andrea Mattiol
+    </footer>
+  </main>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
